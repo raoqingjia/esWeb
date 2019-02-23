@@ -1,0 +1,49 @@
+<div class="container-fluid" ng-controller="ladderMonthPool">
+    <div class="clearfloat row">
+        <div class="col-sm-11 col-md-11  col-lg-11" >
+            <div class="filter-box" >
+                <label>日期：</label>
+               <month-filter-end></month-filter-end>
+            </div>
+        </div>
+        <div class="col-sm-1 col-md-1  col-lg-1">
+            <button type="button" class="filter-btn" ng-click="">筛选</button>
+        </div>
+    </div>
+
+    <!-- 当月趋势柱状图 -->
+    <div class="panel-box  margin-bottom20">
+        <div class="panel-title">
+            <h2>月使用量阶梯分布</h2>
+        </div>
+        <!--<div class="echarts-trend"></div>-->
+        <div  ng-class="{true: 'echarts-no-data', false: 'echarts-loading-div'}[echartsNoData]" ng-if="!echartsShow"></div>
+        <echarts-pie  legend="echartsLegend"  series="echartsSeries"  name="echartsName" selected="selectedMode"  unit="echartsUnit" ng-if="echartsShow"></echarts-pie>
+    </div>
+    <!-- table表格 -->
+    <div class="trend-table  clearfix">
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th>月份</th>
+                <th>阶梯档位(KB)</th>
+                <th>数量(个)</th>
+                <th>占比(%)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="items in tableArray">
+                <td ng-bind="items.time"></td>
+                <td ng-bind="items.dangwei"></td>
+                <td ng-bind="items.number"></td>
+                <td ng-bind="items.percent"></td>
+            </tr>
+            <!--<tr>-->
+            <!--<td colspan="4" >-->
+            <!--没有找到你需要的数据-->
+            <!--</td>-->
+            <!--</tr>-->
+            </tbody>
+        </table>
+    </div>
+</div>

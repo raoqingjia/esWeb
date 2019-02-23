@@ -1,0 +1,505 @@
+﻿/*^^^^^^^^^^^^^^^^^^^^^^^^    登录页面样式(开始)    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+.login-content{
+   margin-top: 110px;
+}
+
+.login-bg img{
+    display: block;
+    width: 90%;
+}
+.login-style{
+    width:308px;
+    height:262px;
+    border:1px solid #D0D9DC;
+    margin-top: 90px;
+    background:#fafafa;
+    padding:28px 35px;
+    border-radius: 4px;
+}
+
+.login-style  a{
+    margin-left:45px;
+    color: #0083cf;
+    cursor: pointer;
+}
+
+.login-style .verify  input{
+    display: inline-block;
+    width: 108px;
+}
+.login-style .verify  div{
+    display: inline-block;
+}
+.login-style  .input-group{
+    margin-bottom: 20px;
+}
+
+.login-style .input-group  .input-group-addon{
+    background-color: #ffffff!important;
+}
+
+.info-icon{
+    width: 13px;
+    height:15px;
+}
+
+.testicon{
+    width: 86px;
+    height:28px;
+    margin-left: 10px;
+    display: inline-block;
+}
+.refreshicon{
+    width: 16px;
+    height:14px;
+    margin-left: 5px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.login-warn{
+    color:#eb5959;
+    font-size: 14px;
+}
+
+.login-btn{
+    width:108px;
+    height:30px;
+    line-height: 30px;
+    background:#6cc213!important;
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$   登录页面样式(结束)    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+/*以上的样式已经合并完毕，可以放到common.css的样式中，要先跟后台修改后台html跟js的代码*/
+
+
+
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  消息中心页面的样式代码（开始） ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+.news-box{
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px #ddd solid ;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.news-header{
+    font-weight: bold;
+    color: #404040!important;
+    background-color: #fafafa!important;
+    border-color: #d4d6d8!important;
+    font-size: 16px!important;
+    padding: 10px  20px!important;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.news-box>.form-inline{
+    padding: 10px 20px !important;
+}
+
+
+
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$   消息中心页面的样式代码（结束） $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+/*以上的样式已经合并完毕，可以放到common.css的样式中，要先跟后台修改后台html跟js的代码*/
+
+
+
+
+
+
+
+
+
+
+
+/*流量仪表盘起页面的样式开始位置*/
+.pan{ width: 32.6%;height:340px;overflow: hidden ; float: left;background-color: #ffffff;}
+.panMarginRight{margin-right: 1.1%}
+.pan .title-right{ float: right;cursor: pointer }
+.pan .list-group-item{padding: 20px  20px 10px 40px !important;}
+.pan .list-group-item-heading {margin-bottom: 5px !important;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;   }
+.pan .panel-default > .panel-heading {color: #383838;background-color: #f5f5f5;border-color: #ddd; font-size: 16px; font-weight: bold;}
+.pan .pan-list{height: 295px;padding: 0 20px;}
+.pan-list  .gaugeId{  margin: 0 auto;width: 100%;height: 100%}
+
+.pan .pan-relative{ position: relative; z-index: 1;}
+.pan .pan-show{
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    z-index: 5;
+    width: 120px;
+    margin-left: -60px;
+    height: 60px;
+    color: #ffffff;
+    background: url("../images/bg_03_01.png") left top  no-repeat;
+    text-align: center;}
+
+.pan .pan-show .pan-show-text{
+    background: url("../images/bg_04_02.png") right top  no-repeat;
+    width: 100%;
+    height: 100%;
+}
+.pan-show-text p{
+    font-size: 16px;
+    padding-top:5px;
+    margin: 0;
+}
+.pan-show-text h4{
+    font-size:20px;
+    margin: 0;
+    padding-top:5px;
+
+}
+.pan .pan-txt{
+    color: #404040!important;
+    font-size: 14px!important;
+    font-weight: normal!important;
+    padding: 15px 0 0 0;
+    overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
+}
+.pan .pan-txt label{  font-weight: normal;}
+.pan .pan-txt a{background-color: #7dd131;color: #ffffff ;border-radius: 2px;display: inline-block;margin-left: 20px;padding:3px  7px; }
+
+/*流量仪表盘起页面的样式结束位置*/
+/*、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、*/
+
+
+
+
+
+
+
+/*^^^^^^^^^^^^^^^^^^^以下代码可能作废，需要验证^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+.list-group-item{
+    padding: 20px 46px !important;
+}
+.list-group-item-heading {
+    margin-bottom: 15px !important;
+    color: #404040;
+    font-size: 14px;
+    cursor:pointer;
+}
+
+.list-group-item-heading  a{
+    text-decoration: underline;
+}
+
+.list-group-item-text{
+    color: #cccccc;
+    font-size: 14px;
+}
+
+.bold{font-weight: bold;}
+.padding20{padding: 10px 20px !important;}
+.marBottom0{margin-bottom: 0!important;}
+/*panel标题*/
+.panelTitle{
+    width: 100%;
+    height: 38px;
+    background: #96baea!important;
+    line-height: 40px;
+    font-family: "微软雅黑";
+    color:#fff!important;
+    font-weight:bold;
+    border-color:#d4d6d8!important;
+    position: relative;
+}
+
+.relative{position: relative;}
+
+/*业务详情*/
+/*业务详情里的图表按钮位置*/
+.LineTab{
+    margin: 20px 0!important;
+}
+
+/*业务详情结束*/
+/*$$$$$$$$$$$$$$$$$$$$$ 以下代码可能作废，需要验证  $$$$$$$$$$$$$$$$$$$$$$$*/
+
+
+
+/*我的订购*/
+
+.order-box{
+    margin: 0 30px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    overflow: hidden;
+}
+.order-box:nth-of-type(1){
+     margin-top: 110px;
+}
+.order-header{
+    background-color:#fafafa !important;
+    /*border-bottom: 1px solid #d4d6d8!important;*/
+    padding: 10px 20px !important;
+    font-weight: bold!important;
+    font-size: 16px;
+    color: inherit;
+}
+.order-menu .order-header{
+    border-bottom: 1px #fafafa  solid  !important;
+}
+.order-title{
+    background-color: #96baea !important;
+    border-bottom: 1px solid #d4d6d8!important;
+    padding: 6px 20px  10px 20px !important;
+    border-radius: 0;
+    position: relative;
+}
+
+.order-title>a{
+    font-weight: bold!important;
+    font-size: 14px !important;
+    color: #ffffff;
+
+}
+.order-title>a:hover {
+    text-decoration: underline;
+}
+
+.order-group{
+    margin: 1px 0;
+}
+
+.order-body{
+    line-height: 34px !important;
+    font-size: 14px;
+    color: #404040 !important;
+    padding: 6px 20px !important;
+    border-top: 0px !important;
+    position: relative;
+}
+.order-padding{
+    padding:0 20px!important;
+}
+.order-body>p{
+    border-bottom: 1px #d4d6d8 solid;
+    padding: 8px 0 ;
+}
+.order-menu .order-body:last-of-type>p{
+    border-bottom: none;
+}
+.order-menu{
+     margin: 0;
+     display: none;
+}
+
+.sta-btn{
+    float: right;
+    margin:-1px 20px 0 0;
+    position: relative;
+}
+.sta-btn button{
+    margin:0 0 0 8px;
+}
+
+.order-button{
+    line-height:24px;
+    border: none;
+    border-radius:3px;
+    background-color: #ffffff;
+    font-size: 14px;
+    color: #404040;
+    outline: none;
+}
+.sta-icon{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    vertical-align: -2px;
+    background: url(../images/sta-icon.png) no-repeat;
+}
+
+.detail-icon{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    vertical-align: -4px;
+    background: url(../images/detail-icon.png) no-repeat;
+}
+.up-arrow{
+    width: 12px;
+    height: 8px;
+    display: inline-block;
+    background: url(../images/up.png) no-repeat;
+    position:absolute;
+    right:20px;
+    top: 14px;
+    cursor: pointer;
+}
+.down-arrow{
+    width: 12px;
+    height: 8px;
+    display: inline-block;
+    position:absolute;
+    right:20px;
+    top: 14px;
+    background: url(../images/down.png) no-repeat;
+    cursor: pointer;
+}
+
+.eyeicon{
+    width: 24px;
+    height: 14px;
+    display: inline-block;
+    background: url(../images/eye.png);
+    position:absolute;
+    right:20px;
+    top: 18px;
+    cursor: pointer;
+}
+
+.order-cover{
+    z-index:100;
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    background:#000;
+    background:rgba(0,0,0,0.7);
+    /*filter:alpha(opacity=70);*/
+    clear:both;
+    padding: 110px 0 0 0;
+    display: none;
+}
+
+.order-cover .order-box{
+       margin-top: 0;
+       height: 600px;
+       overflow: hidden;
+       overflow-y: scroll;
+}
+.order-header:first-child{
+    border-bottom: 1px solid #d4d6d8!important;
+    background-color: #fafafa!important;
+}
+
+/*我的订购结束*/
+
+
+.DownInfo{background: transparent url("../images/DownInfo.png") no-repeat scroll 7px 15px;padding: 0 0 0 25px;}
+.downgif{
+    display:inline-block;
+    position: absolute;
+    right: 0px;
+    top: 15px;
+    display:none;
+    margin-right: 20px;
+}
+span.downbadge{/*信封消息条数*/
+    background: #fc8f36;
+    position: absolute;
+    top: 6px;
+    right: 35px;
+    padding: 2px 5px!important;
+    display: inline-block;
+    min-width: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 10px;
+    display: none;
+}
+/*新加关*/
+/*下载列表页面样式 结束*/
+/*业务明细*/
+
+/*业务明细结束*/
+/*业务统计中订购类型占比*/
+.typeAccount .Fleft{
+    width:30%;
+}
+.typeAccount .Fleft .accountPie{
+    height:362px;
+    display: none;
+}
+
+.typeAccount .Fleft .loadingCircular{
+    height:362px;
+    width:100%;
+    background:url("../images/loading.gif") no-repeat center ;
+    background-size: 200px 200px;
+}
+
+
+.typeAccount .Fright{
+    width:69%;
+}
+.typeAccount .Fright thead th{
+    font-size: 14px!important;
+}
+.typeAccount .Fright tbody td{
+    font-size: 12px!important;
+}
+/*业务统计中订购类型占比结束*/
+
+/*EC预警设置*/
+
+
+
+
+
+
+
+/*不可编辑的class*/
+.unedit{
+    color: #bfbfbf;
+    border:none!important;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+}
+/*不可编辑的class只去掉边框*/
+
+.addborder{
+    display:inline-block!important;
+    border:1px solid #ccc!important;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075)!important;
+}
+.infoedit{
+    margin-top: 0!important;
+    margin-left:15px!important;
+    margin-right: 0px!important;
+}
+
+
+
+.divText{
+    max-width: 150px!important;
+    line-height: 30px;
+    overflow: hidden;
+}
+/*EC预警设置结束*/
+/*运营统计预警设置*/
+
+
+
+
+
+
+

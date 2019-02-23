@@ -1,0 +1,46 @@
+ 1.  //归属省的多选下拉框交互效果  写成了指令directive
+      $scope.cityArray = citySelectArray;
+      $scope.cityName= "全部";   //初始文本框的内容
+      $scope.cityId="";             //选中归属省的ID
+      $scope.cityNameInit = "";            //作为记录保存初始文本框的内容变量
+      $scope.cityIdInit = "";              //作为记录保存初始ID的内容变量
+      $scope.cityFilterShow = false; //归属省遮罩层效果
+
+
+ 2.  //  订购  筛选下拉框交互效果
+
+    $scope.orderArray=[      //订购下拉菜单的所有选项，这种id，name的结构不许变
+         {"id":"000","name":"无订购"},
+         {"id":"111","name":"订购1111"},
+    ];
+
+ $scope.orderShow=false;   //订购下拉菜单的初始状态是隐藏
+    $scope.orderName="无订购";   //初始默认选项内容
+    $scope.orderId="000";        //初始默认选项id
+
+    //这个给整个的文档添加事件   这要是下拉菜单都要有
+    angular.element(document).unbind().bind("click",function($event){
+        $scope.orderShow=false;
+        $scope.$apply(function(){});
+         $event.stopPropagation();
+    });
+
+  selectInputFilter   selectOptionFilter   是筛选中下拉框的指令格式，注意里面的格式问题
+
+ 注意，注意，下拉菜单的所有选项都要是id，name的格式
+
+ 3. //日期 筛选框的交互效果
+
+ //日历插件的日期的初始设定
+
+    var choseDateStart="";
+    var choseDateEnd="";
+    var startDate="";
+    var endDate="";
+    //这8个参数是固定的，上边的四个参数是通过判断条件后赋值给下面的angular四个参数进行数据的双向绑定
+
+    $scope.choseDateStart =choseDateStart;     //筛选的初始日期
+    $scope.choseDateEnd = choseDateEnd;   //筛选的截止始日期
+    $scope.startDate = startDate;   //限定起始日期
+    $scope.endDate = choseDateEnd;  //限定截止日期
+

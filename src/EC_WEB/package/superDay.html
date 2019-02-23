@@ -1,0 +1,122 @@
+<div class="container-fluid superDayStatistics" ng-controller="superDayPackage" >
+    <div class="clearfloat row">
+        <div class="col-sm-11 col-md-11  col-lg-11" >
+            <div class="filter-box" >
+                <label>日期：</label>
+                <in-the-same-month-end></in-the-same-month-end>
+            </div>
+            <div class="filter-box ">
+                <label>流量包档位：</label>
+                <multiple-select-input-fun select-name="multipleOrderTypeName" select-id="multipleOrderTypeId" select-show="multipleOrderTypeShow"
+                                           select-array="multipleOrderTypeArray"   select-name-init="multipleOrderTypeNameInit" select-id-init="multipleOrderTypeIdInit"></multiple-select-input-fun>
+                <div  class='filter-alert' ng-show="multipleOrderTypeShow">
+                    <div class="title">订购类型</div>
+                    <div class="box clearfloat">
+                        <multiple-select-all-fun select-array="multipleOrderTypeArray"></multiple-select-all-fun>
+                        <multiple-select-reverse-fun select-array="multipleOrderTypeArray"></multiple-select-reverse-fun>
+                    </div>
+                    <div class="option-list clearfloat" nice-Scroll >
+                        <div ng-repeat="items in multipleOrderTypeArray">
+                            <label><input type="checkbox" ng-model="items.status" data="{{items.code}}">{{items.name}}</label>
+                        </div>
+                    </div>
+                    <div class="button clearfloat">
+                        <multiple-select-sure-fun  select-name="multipleOrderTypeName" select-id="multipleOrderTypeId" select-show="multipleOrderTypeShow"
+                                                   select-array="multipleOrderTypeArray"   select-name-init="multipleOrderTypeNameInit" select-id-init="multipleOrderTypeIdInit"></multiple-select-sure-fun>
+                        <multiple-select-cancel-fun  select-name="multipleOrderTypeName" select-id="multipleOrderTypeId" select-show="multipleOrderTypeShow"
+                                                     select-array="multipleOrderTypeArray"   select-name-init="multipleOrderTypeNameInit" select-id-init="multipleOrderTypeIdInit"></multiple-select-cancel-fun>
+                    </div>
+                </div>
+                <div class="filter-cover"  ng-show="multipleOrderTypeShow"></div>
+            </div>
+            <div class="filter-box ">
+                <div class="select-import">
+                    <div class="select-box">
+                        <input type="text" value="EC编码" class="select-input"  ng-model="selectImportname"  ng-click="selectImportInputFun($event)" readonly>
+                        <ul class="select-list" ng-if="selectImportShow">
+                            <li  ng-repeat="items in selectImportArray"><a href="javascript:void(0);" ng-bind="items.name" ng-click="selectImportOptionFun(items.name,items.id,$event)"></a></li>
+                        </ul>
+                    </div>
+                    <input class="search-input" type="text" placeholder="EC编码/订购ID">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1 col-md-1  col-lg-1">
+            <button type="button" class="filter-btn" ng-click="">筛选</button>
+        </div>
+    </div>
+
+    <!-- table表格 -->
+    <div class="panel-box">
+        <div class="panel-title clearfloat">
+            <h2>超高用户日统计(top20)<span></span></h2>
+            <!--<button type="button" class="panel-down">-->
+                <!--导出&nbsp;<img src="../images/checkout.png">-->
+            <!--</button>-->
+        </div>
+        <div class="trend-table">
+            <table  class="table  table-hover">
+                <thead>
+                <tr>
+                    <th>时间</th>
+                    <th>手机号</th>
+                    <th>归属省</th>
+                    <th>流量包档位</th>
+                    <th>业务量(个)</th>
+                    <th>更多操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="items in tableArray">
+                    <td ng-bind="items.time"></td>
+                    <td ng-bind="items.phone"></td>
+                    <td ng-bind="items.city"></td>
+                    <td ng-bind="items.dangwei"></td>
+                    <td ng-bind="items.bussiness"></td>
+                    <td><button class="btn btn-primary btn-sm" type="button" ng-click="detailWindowFun($event)">详情</button></td>
+                </tr>
+                <tr>
+                    <td colspan="6">没有找到你需要的数据</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!--弹窗效果  开始-->
+    <div  class="detail-window" ng-if="detailWindowShow">
+        <div class="title clearfloat">
+            <h3>15145268255超高明细(20170301)<span></span></h3>
+            <i class="icon icon-remove" ng-click="windowCloseFun($event)"></i>
+        </div>
+        <div class="content">
+            <div class="tableOne">
+                <table  class="table countTable table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th ng-repeat="item in warningHeadText" ng-bind="item.header"></th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="tableTwo" nice-Scroll>
+                <table  class="table countTable table-bordered table-hover">
+                    <tbody>
+                    <tr ng-repeat="items in warningBodyText"  on-finish-render>
+                        <td ng-bind="items.ECnumber"></td>
+                        <td ng-bind="items.id"></td>
+                        <td ng-bind="items.city"></td>
+                        <td ng-bind="items.dangwei"></td>
+                        <td ng-bind="items.presentTime"></td>
+                        <td ng-bind="items.starTime"></td>
+                        <td ng-bind="items.endTime"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="filter-cover"  ng-if="detailWindowShow"></div>
+    <!--弹窗效果  结束-->
+
+</div>

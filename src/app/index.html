@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"  ng-controller="userInfor">
+<head >
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <script src="../js/pages/resource.js"></script>
+    <script src="../js/modules/myapp.js"></script>
+    <script src="../js/directives/directive.js"></script>
+    <script src="../js/services/service.js"></script>
+    <script src="../js/controllers/userInfor.js"></script>
+    <script src="../js/pages/warningSetting-ec.js"></script>
+    <script src="../js/pages/warningSetting-Group.js"></script>
+</head>
+<body ng-click="bodyFun($event)">
+        <!-- 头部信息 -->
+        <header class="clearfix header inner">
+                <!-- 头部右侧logo -->
+                <div>
+                    <img src="../images/logo.jpg">
+                </div>
+                <!--头部的右侧的用户姓名，消息信息与下拉菜单的代码-->
+
+                <ul>
+                    <li>
+                        <a href="javascript:void(0);">用户人:<span ng-bind="userName"></span></a>
+                    </li>
+                    <li>
+                        <a href="#/newsCenter" class="letter">
+                            <span class="badge"  ng-bind="border"></span>
+                        </a>
+                    </li>
+                    <li class="list" ng-click="userActionFun($event)">
+                        <a href="javascript:void(0);" class="user"></a>
+                        <a href="javascript:void(0);" class="carets"></a>
+                        <ul class="list-option" ng-show="userActionStatus">
+                            <li ng-repeat="status in userActionOption"  on-finish-render>
+                                <a href="{{status.code}}" ng-bind="status.name"> </a>
+                            </li>
+                            <li ng-if="CloseWebPage">
+                                <a href="javascript:void(0);" onclick="CloseWebPage()">[退出]</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+        </header>
+        <!--横向导航tab标签-->
+        <nav class="header-nav inner clearfix">
+            <ul>
+                <li  ng-repeat="item in navArray">
+                    <span class="line" ng-if="!$first">|</span>
+                    <a  ng-href="#/{{item.menuAddr}}"  ng-class="{'active' : navActive=={{$index}} }" ng-click="navArrayFun($index)" ng-bind="item.menuName"></a>
+                </li>
+            </ul>
+        </nav>
+    <!-- tab标签里的主要内容-->
+       <div class="main-content inner  clearfloat"  ui-view></div>
+       <div class="loading-div" ng-show="loading">
+            <div class="discover"></div>
+            <div class="Loading">
+                <strong>Loading...</strong>
+            </div>
+        </div>
+
+</body>
+</html>

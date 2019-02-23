@@ -1,0 +1,117 @@
+<div class="container-fluid content-fluid  new-center"  ng-controller="newsCenter">
+  <div class="panel-title news-title">
+    <h2>消息中心</h2>
+  </div>
+  <div class="clearfloat row">
+    <div class="col-sm-11 col-md-11  col-lg-11" >
+      <div class="filter-box" >
+         <label>日期：</label>
+         <day-filter-start></day-filter-start>-<day-filter-end></day-filter-end>
+      </div>
+
+      <div class="filter-box">
+        <label>消息来源：</label>
+        <dl class="filter-select" >
+          <dt>
+             <input type="text"   readonly="readonly"  ng-click="newsSourceSelectInputFun($event)"  data="newsSourceId" title="newsSourceName" ng-model="newsSourceName" class="filter-input input-select">
+          </dt>
+          <dd  class="select-position" >
+            <ul class="select-option" ng-if="newsSourceShow"  nice-Scroll>
+              <li ng-repeat="items in newsSourceArray">
+                <a href="javascript:void(0);" ng-bind="items.name"  ng-click="newsSourceSelectOptionFun(items.name,items.id,$event)"></a>
+              </li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+
+      <div class="filter-box" ng-show="newsControlOrder">
+        <label>订购：</label>
+        <dl class="filter-select" >
+          <dt>
+            <input type="text"   readonly="readonly"  ng-click="orderSelectInputFun($event)"  data="orderId" title="orderName" ng-model="orderName" class="filter-input input-select">
+          </dt>
+          <dd  class="select-position" >
+            <ul class="select-option" ng-if="orderShow"  nice-Scroll>
+              <li ng-repeat="items in orderArray">
+                <a href="javascript:void(0);" ng-bind="items.name"  ng-click="orderSelectOptionFun(items.name,items.id,$event)"></a>
+              </li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+
+      <div class="filter-box ">
+        <label>关键字：</label>
+        <input type="text"   class="filter-input"/>
+      </div>
+    </div>
+    <div class="col-sm-1 col-md-1  col-lg-1">
+      <button type="button" class="filter-btn"  ng-click="filterBtnFun($event)">筛选</button>
+    </div>
+  </div>
+      <!-- 消息列表 -->
+      <ul class="news-list"  ng-if="true">
+        <li class="unread">
+          <p>您提交的业务已生成文档，请<a  href="javascript:void(0);" ng-click="detailWindowFun($event)">点击下载。</a></p>
+          <span>2016-06-30 18:30</span>
+        </li>
+        <li>
+          <p>您订购的定向流量统付-xxxxx套餐截止2016年7月24日已使用81%，请您关注，查询明细可登陆
+            <a  href="http://www.10086.cn">www.10086.cn</a>
+          </p>
+          <span>2016-06-30 18:30</span>
+        </li>
+        <li class="unread">
+          <p>您订购的定向流量统付-xxxxx套餐截止2016年7月24日已使用81%，请您关注，查询明细可登陆
+            <a href="http://www.10086.cn">www.10086.cn</a></p>
+          <span>2016-06-30 18:30</span>
+        </li>
+        <li class="unread">
+          <p >您订购的定向流量统付-xxxxx套餐截止2016年7月24日已使用81%，请您关注，查询明细可登陆
+            <a href="http://www.10086.cn">www.10086.cn</a></p>
+          <span>2016-06-30 18:30</span>
+        </li>
+        <li>
+          <p>您订购的定向流量统付-xxxxx套餐截止2016年7月24日已使用81%，请您关注，查询明细可登陆
+            <a href="http://www.10086.cn">www.10086.cn</a></p>
+          <span>2016-06-30 18:30</span>
+        </li>
+      </ul>
+      <div class="no-news" ng-if="true">暂时查询不到您要的信息</div>
+
+
+<div  class="detail-window" ng-if="detailWindowShow">
+  <div class="title clearfloat">
+    <h3>预警信息<span>(由于数据量过大，单用户使用量相关预警只显示前500条)</span></h3>
+    <i class="icon icon-remove" ng-click="windowCloseFun($event)"></i>
+  </div>
+  <div class="content">
+    <div class="tableOne">
+      <table  class="table countTable table-bordered table-hover">
+        <thead>
+        <tr>
+          <th ng-repeat="item in warningHeadText" ng-bind="item.header"></th>
+        </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tableTwo" nice-Scroll>
+      <table  class="table countTable table-bordered table-hover">
+        <tbody>
+        <tr ng-repeat="items in warningBodyText"  on-finish-render>
+          <td ng-bind="items.phone"></td>
+          <td ng-bind="items.city"></td>
+          <td ng-bind="items.dangwei"></td>
+          <td ng-bind="items.presentTime"></td>
+          <td ng-bind="items.starTime"></td>
+          <td ng-bind="items.endTime"></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="filter-cover"  ng-if="detailWindowShow"></div>
+
+</div>

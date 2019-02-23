@@ -1,0 +1,29 @@
+<div class="container-fluid content-fluid  down-list " ng-controller="downList">
+    <div class="panel-title  down-title">
+        <h2>下载列表</h2>
+    </div>
+    <!-- 消息列表 -->
+    <ul class="ul-list">
+        <li class="clearfloat row">
+            <div class="col-lg-11 col-md-11 col-sm-11 clearfloat">
+                <img  src="../images/document_pdf.png">
+                 <p >包模式业务详情列表_20160829-20160921.xlsx包模式业务详情列表_20160829-20160921.xlsx包模式业务详情列表_20160829-20160921.xlsx</p>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1">
+                <span class="down-unload">可下载</span>
+                <span class="down-load"  ng-if="false">正在处理中...</span>
+            </div>
+        </li>
+        <li class="clearfloat row">
+            <div class="col-lg-11 col-md-11 col-sm-11">
+                <img  src="../images/undocument_pdf.png">
+                <p >包模式业务详情列表_20160829-20160921.xlsx</p>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1">
+                <span class="down-unload" ng-if="false">可下载</span>
+                <span class="down-load">正在处理中...</span>
+            </div>
+        </li>
+    </ul>
+    <div class="no-list" ng-if="false">暂时无下载信息</div>
+</div>

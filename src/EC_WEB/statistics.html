@@ -1,0 +1,41 @@
+<!-- 左侧纵向导航 -->
+<div class="left-nav" ng-controller="statistics">
+    <dl class="filter-select" >
+        <dt>
+            <input type="text"   readonly="readonly"  ng-click="selectCompanyInputFun($event)"  title="{{selectCompanyName}}" ng-model="selectCompanyName" >
+        </dt>
+        <dd  class="select-position" >
+            <ul class="select-option" ng-if="selectCompanyShow"  nice-Scroll>
+                <li ng-repeat="items in selectCompanyArray">
+                    <a href="javascript:void(0);" ng-bind="items.name"  ng-click="selectCompanyOptionFun(items.name,items.id,$event)"></a>
+                </li>
+            </ul>
+        </dd>
+    </dl>
+    <div class="box" ng-repeat="itemLeftNav in leftNavArray"  on-finish-render>
+        <div ng-click="leftNavTabFun($index)">
+            <span ng-class="leftNavClassFun($index)"></span>
+            <a href="javascript:void(0);">{{itemLeftNav.menuName}}</a>
+        </div>
+        <ul class="clearfix" ng-show="$index==leftNavTab" data="{{$index}}">
+            <li ng-repeat="items in itemLeftNav.son" ui-sref-active="active" >
+                <!--<a ui-sref=".{{items.menuAddr}}" href="#/statistics/{{items.menuAddr}}">{{items.menuName}}</a>-->
+                <a  href="javascript:void(0);" data="#/statistics/{{items.menuAddr}}"  ng-click="loadStatisticsFun(items.menuAddr,$event.target,$event)">{{items.menuName}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--左侧导航结束-->
+<!-- 右侧内容区 -->
+<div class="right-content" ui-view>
+</div>
+<!--右侧内容区结束-->
+
+<!--柱状点击弹出框效果-->
+<div class="echarts-window">
+    <ul>
+        <li ng-repeat="items in echartsWindowArray">
+            <a  ng-bind="items.name" ng-click="echartsWindowFun($event.target,items.link,items.name,$index,$event)" href="javascript:void(0);"></a>
+        </li>
+   </ul>
+</div>

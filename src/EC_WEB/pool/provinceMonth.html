@@ -1,0 +1,109 @@
+<div class="container-fluid" ng-controller="provinceMonthPool">
+    <div class="clearfloat row">
+        <div class="col-sm-11 col-md-11  col-lg-11" >
+            <div class="filter-box" >
+                <label>日期：</label>
+                <month-filter-start></month-filter-start>-<month-filter-end></month-filter-end>
+            </div>
+            <div class="filter-box">
+                <label>归属省：</label>
+                <city-select-input></city-select-input>
+                <div  class='filter-alert' ng-show="cityFilterShow">
+                    <div class="title">归属省</div>
+                    <div class="box clearfloat">
+                        <city-select-all></city-select-all>
+                        <city-select-reverse></city-select-reverse>
+                    </div>
+                    <div class="option-list clearfloat">
+                        <div ng-repeat="items in cityArray" >
+                            <div class="option-title">{{items.partition}}</div>
+                            <div ng-repeat="its in items.city" class="option">
+                                <label><input type="checkbox" ng-model="its.status" data="{{its.code}}">{{its.name}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button clearfloat">
+                        <city-select-sure></city-select-sure>
+                        <city-select-cancel></city-select-cancel>
+                    </div>
+                </div>
+                <div class="filter-cover"  ng-show="cityFilterShow"></div>
+            </div>
+            <div class="filter-box ">
+                <label>订购类型：</label>
+                <multiple-select-input-fun select-name="multipleOrderTypeName" select-id="multipleOrderTypeId" select-show="multipleOrderTypeShow"
+                                           select-array="multipleOrderTypeArray"   select-name-init="multipleOrderTypeNameInit" select-id-init="multipleOrderTypeIdInit"></multiple-select-input-fun>
+                <div  class='filter-alert' ng-show="multipleOrderTypeShow">
+                    <div class="title">订购类型</div>
+                    <div class="box clearfloat">
+                        <multiple-select-all-fun select-array="multipleOrderTypeArray"></multiple-select-all-fun>
+                        <multiple-select-reverse-fun select-array="multipleOrderTypeArray"></multiple-select-reverse-fun>
+                    </div>
+                    <div class="option-list clearfloat" nice-Scroll >
+                        <div ng-repeat="items in multipleOrderTypeArray">
+                            <label><input type="checkbox" ng-model="items.status" data="{{items.code}}">{{items.name}}</label>
+                        </div>
+                    </div>
+                    <div class="button clearfloat">
+                        <multiple-select-sure-fun  select-name="multipleOrderTypeName" select-id="multipleOrderTypeId" select-show="multipleOrderTypeShow"
+                                                   select-array="multipleOrderTypeArray"   select-name-init="multipleOrderTypeNameInit" select-id-init="multipleOrderTypeIdInit"></multiple-select-sure-fun>
+                        <multiple-select-cancel-fun  select-name="multipleOrderTypeName" select-id="multipleOrderTypeId" select-show="multipleOrderTypeShow"
+                                                     select-array="multipleOrderTypeArray"   select-name-init="multipleOrderTypeNameInit" select-id-init="multipleOrderTypeIdInit"></multiple-select-cancel-fun>
+                    </div>
+                </div>
+                <div class="filter-cover"  ng-show="multipleOrderTypeShow"></div>
+            </div>
+            <div class="filter-box ">
+                <div class="select-import">
+                    <div class="select-box">
+                        <input type="text" value="EC编码" class="select-input"  ng-model="selectImportname"  ng-click="selectImportInputFun($event)" readonly>
+                        <ul class="select-list" ng-if="selectImportShow">
+                            <li  ng-repeat="items in selectImportArray"><a href="javascript:void(0);" ng-bind="items.name" ng-click="selectImportOptionFun(items.name,items.id,$event)"></a></li>
+                        </ul>
+                    </div>
+                    <input class="search-input" type="text" placeholder="EC编码/订购ID">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1 col-md-1  col-lg-1">
+            <button type="button" class="filter-btn" ng-click="">筛选</button>
+        </div>
+    </div>
+
+    <!-- 当月趋势柱状图 -->
+    <div class="panel-box  margin-bottom20">
+        <div class="panel-title">
+            <h2>分省月统计</h2>
+        </div>
+        <!--<div class="echarts-trend"></div>-->
+        <div  ng-class="{true: 'echarts-no-data', false: 'echarts-loading-div'}[echartsNoData]" ng-if="!echartsShow"></div>
+        <echarts-bar  xaxis="echartsxAxis"  series="echartsSeries"  rotate="echartsRotate" bottom="echartsBottom"  unit="echartsUnit" ng-if="echartsShow"></echarts-bar>
+    </div>
+    <!-- table表格 -->
+    <div class="trend-table  clearfix">
+        <!--<button type="button" class="panel-down">-->
+        <!--导出&nbsp;<img src="../images/checkout.png">-->
+        <!--</button>-->
+        <table class="table table-hover" id="provinceMonthPoolTableFenPage">
+            <thead>
+            <tr>
+                <th>时间</th>
+                <th>归属省</th>
+                <th>流量(KB)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="items in tableArray"  on-finish-render>
+                <td ng-bind="items.time"></td>
+                <td ng-bind="items.city"></td>
+                <td ng-bind="items.businessNumber"></td>
+            </tr>
+            <!--<tr>-->
+            <!--<td colspan="3" >-->
+            <!--没有找到你需要的数据-->
+            <!--</td>-->
+            <!--</tr>-->
+            </tbody>
+        </table>
+    </div>
+</div>

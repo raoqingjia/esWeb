@@ -1,0 +1,47 @@
+<div class="container-fluid  content-fluid  waring-ec" ng-controller="waringEc">
+            <div class="panel-title waring-title">
+                <h2> 预警设置 </h2>
+            </div>
+            <div class="waring-box" ng-repeat="items in waringText"  ng-init="outerIndex = $index" on-finish-render>
+                <div class="row product-title">
+                    <div class="col-xs-8">
+                        <p ng-bind="items.title"></p>
+                    </div>
+                    <div class="col-xs-4 ">
+                        <div class="button-box">
+                            <button type="button" class="editBtn" ng-click="editFun($event.target,$index,$event)">编辑</button>
+                            <button type="button" class="historyBtn" ng-click="historyInforBtn()">历史信息</button>
+                            <button type="button" class="saveBtn" ng-click="saveFun($event.target,$index,$event)">保存</button>
+                            <button type="button" class="cancelBtn" ng-click="cancelFun($event.target,$index,$event)">取消</button>
+                        </div>
+                    </div>
+                </div>
+                <form class="row user-infor">
+                        <label class="col-xs-6">
+                            <span>手机号：</span>
+                            <span ng-bind="items.phone"  class="text-box"></span>
+                            <input type="text" autocomplete="off"  class="userPhone"/>
+                        </label>
+                       <label class="col-xs-6 ">
+                           <span>邮箱号：</span>
+                           <span ng-bind="items.email" class="text-box"></span>
+                           <input type="text" autocomplete="off" class="userEmail"/>
+                       </label>
+                </form>
+                <form class="row waring-text">
+                    <div class="col-xs-6" ng-repeat="its in items.infor">
+                        <label class="label-text">
+                            <span ng-bind="its.name"></span>
+                            <span ng-bind="its.number"  class="text-box"></span>
+                            <input type="text"  autocomplete="off"/>
+                            <span ng-bind="its.unit"></span>
+                            <img src="../images/info.png"  title="{{its.name}}"/>
+                        </label>
+                        <label class="switch">
+                            <input type="checkbox" ng-model="its.checked" ng-disabled="its.disabled">
+                            <span class="onOffbg" ng-click="switchFun($event.target,outerIndex,$index,$event)"></span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+</div>

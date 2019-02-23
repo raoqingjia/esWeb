@@ -1,0 +1,38 @@
+{"code":"10000",
+  "data":{
+    "userNavMenu":[
+      {"menuId":1,"menuCode":"100","menuName":"首页","menuAddr":"firstPage","parentMenuId":0,"resId":11},
+      {"menuId":7,"menuCode":"500","menuName":"运营统计","menuAddr":"statistics","parentMenuId":0,"resId":15},
+      {"menuId":8,"menuCode":"300","menuName":"详单查询","menuAddr":"businessDetail","parentMenuId":0,"resId":16}
+     ],
+    "userLeftMenu":[
+        {"menuId":22,"menuCode":"216","menuName":"订购","menuAddr":"#","parentMenuId":7,"resId":30,"son":[
+        {"menuId":25,"menuCode":"219","menuName":"按月统计","menuAddr":"order/monthStatistics","parentMenuId":22,"resId":33},
+        {"menuId":26,"menuCode":"220","menuName":"分省统计","menuAddr":"order/provinceStatistics","parentMenuId":22,"resId":34}
+      ]},
+      {"menuId":23,"menuCode":"217","menuName":"流量包","menuAddr":"#","parentMenuId":7,"resId":31,"son":[
+        {"menuId":27,"menuCode":"223","menuName":"总量日统计","menuAddr":"package/totalDay","parentMenuId":23,"resId":35},
+        {"menuId":28,"menuCode":"224","menuName":"总量月统计","menuAddr":"package/totalMonth","parentMenuId":23,"resId":36},
+        {"menuId":29,"menuCode":"225","menuName":"分省日统计","menuAddr":"package/provinceDay","parentMenuId":23,"resId":38},
+        {"menuId":30,"menuCode":"226","menuName":"分省月统计","menuAddr":"package/provinceMonth","parentMenuId":23,"resId":39},
+        {"menuId":31,"menuCode":"227","menuName":"超高用户日统计","menuAddr":"package/superDay","parentMenuId":23,"resId":40},
+        {"menuId":32,"menuCode":"228","menuName":"超高用户月统计","menuAddr":"package/superMonth","parentMenuId":23,"resId":41},
+        {"menuId":43,"menuCode":"239","menuName":"套餐档位日统计","menuAddr":"package/gearDay","parentMenuId":23,"resId":51},
+        {"menuId":44,"menuCode":"240","menuName":"套餐档位月统计", "menuAddr":"package/gearMonth","parentMenuId":23,"resId":52}
+      ]},
+      {"menuId":24,"menuCode":"218","menuName":"流量池","menuAddr":"#","parentMenuId":7,"resId":32,"son":[
+        {"menuId":33,"menuCode":"229","menuName":"流量日统计","menuAddr":"pool/flowDay","parentMenuId":24,"resId":42},
+        {"menuId":34,"menuCode":"230","menuName":"流量月统计","menuAddr":"pool/flowMonth","parentMenuId":24,"resId":43},
+        {"menuId":35,"menuCode":"231","menuName":"分省日统计","menuAddr":"pool/provinceDay","parentMenuId":24,"resId":44},
+        {"menuId":36,"menuCode":"232","menuName":"分省月统计","menuAddr":"pool/provinceMonth","parentMenuId":24,"resId":45},
+        {"menuId":37,"menuCode":"233","menuName":"超高用户日统计","menuAddr":"pool/superDay","parentMenuId":24,"resId":46},
+        {"menuId":38,"menuCode":"234","menuName":"超高用户月统计","menuAddr":"pool/superMonth","parentMenuId":24,"resId":47},
+        {"menuId":39,"menuCode":"235","menuName":"月使用量阶梯分布","menuAddr":"pool/ladderMonth","parentMenuId":24,"resId":48}
+      ]}
+    ],
+    "userOptionMenu":[
+      {"menuId":16,"menuCode":"160","menuName":"消息中心","menuAddr":"newsCenter","parentMenuId":0,"resId":11},
+      {"menuId":17,"menuCode":"170","menuName":"下载列表","menuAddr":"downList","parentMenuId":0,"resId":15},
+      {"menuId":18,"menuCode":"180","menuName":"预警设置","menuAddr":"warningSettingGroup","parentMenuId":0,"resId":16}
+    ],
+      "userInfo":{ "userId":9003662300,"authId":"2","authType":"G","authNumber":"2","authName":"yunweiceshi"},"messageCount":10},"message":"请求成功" }

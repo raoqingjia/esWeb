@@ -1,0 +1,33 @@
+{
+  "name": "ec",
+  "version": "1.0.0",
+  "description": "new project of angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rao"
+  ],
+  "author": "raoqingjia",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-cache": "^0.4.6",
+    "gulp-clean-css": "^3.0.3",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-make-css-url-version": "^0.0.13",
+    "gulp-uglify": "^2.1.0",
+    "gulp-url-replace": "^1.0.2"
+  }
+}
+
+
+
+
+
+
+
+
